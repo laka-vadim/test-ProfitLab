@@ -1,0 +1,9 @@
+$bg-color: #222222;
+$txt-color: #dddddd;
+
+.block {
+    background-color: $bg-color;
+    &__title {
+        color: $txt-color;
+    }
+}
