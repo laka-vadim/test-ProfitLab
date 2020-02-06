@@ -1,0 +1,66 @@
+$status-bg: #EAEAEA;
+$button-txt: #0C77BB;
+
+.status {
+    color: inherit;
+    font-size: inherit;
+    max-width: 503px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    @media (max-width: 620px) {
+        max-width: 100%;
+    }
+    &__name {
+        color: inherit;
+        font-size: inherit;
+        color: initial;
+        margin: 0 0 11px 0;
+    }
+    &__text {
+        width: 100%;
+        min-height: 46px;
+        max-width: 503px;
+        line-height: 22px;
+        font-weight: normal;
+        font-size: 14px;
+        color: initial;
+        background-color: $status-bg;
+        padding: 12px 12px;
+        position: relative;
+        box-sizing: border-box;
+        @media (max-width: 620px) {
+            max-width: 100%;
+        }
+        &:before {
+            content: "";
+            width: 11px;
+            height: 11px;
+            position: absolute;
+            transform: rotate(45deg);
+            left: 8px;
+            top: -5px;
+            background-color: $status-bg;
+        }
+        & > input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+    &__button {
+        border: 0;
+        background-color: initial;
+        color: $button-txt;
+        font-size: 12px;
+        border-bottom: dashed 1px $button-txt;
+        text-decoration: none;
+        font-weight: normal;
+        margin: 0 5px 11px 0;
+        cursor: pointer;
+        &:focus {
+            outline: 0;
+        }
+    }
+}

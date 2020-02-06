@@ -1,0 +1,8 @@
+.main-container {
+    max-width: 1169px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    @media (max-width: 1189px) {
+        margin: 0 10px;
+    }
+}

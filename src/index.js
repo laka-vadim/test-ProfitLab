@@ -1,4 +1,11 @@
+import "normalize.css";
 import "./index.scss";
-import {test} from "./scripts/block";
+import {Form} from "./scripts/form";
+import {Status} from "./scripts/status";
+import cities from "./cities.json";
 
-test();
+window.onload = function() {
+    const form = new Form(document.forms.update);
+    form.initCitiesList(cities);
+    const status = new Status(document.getElementById("status-text"), document.getElementById("status-button"));
+};

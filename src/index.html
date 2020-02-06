@@ -8,8 +8,59 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="block">
-        <h1 class="block__title">Hello!</h1>
+    <div class="main-container">
+        <header class="header">
+            <h1 class="header__title">
+                <span class="header__text">Здравствуйте,&nbsp;</span>
+                <div class="header__title-status status">
+                    <span class="status__name">Человек №3596941</span><a class="status__button" id="status-button">Сменить статус</a>
+                    <div class="status__text" id="status-text">
+                        Прежде чем действовать, надо понять
+                    </div>
+                </div>
+            </h1>
+        </header>
+        <form class="form" name="update">
+            <div class="input">
+                <label class="input__label" for="city">Ваш город</label>
+                <div class="input__field-wrapper input__field-wrapper-custom-select">
+                    <select class="input__field input__field-custom-select" id="city">
+                        
+                    </select>
+                </div>
+                <!-- <span class="input__text">Требования</span> -->
+            </div>
+            <hr class="form__divider"> 
+            <div class="input form__input-margin">
+                <label class="input__label" for="pass">Пароль</label>
+                <div class="input__field-wrapper"><input class="input__field" type="password" id="pass" name="pass"></div>
+                <span class="input__text">Ваш новый пароль должен содержать не менее 5 символов.</span>
+            </div>
+            <div class="input">
+                <label class="input__label" for="repass">Пароль еще раз</label>
+                <div class="input__field-wrapper"><input class="input__field" type="password" id="repass" name="repass"></div>
+                <span class="input__text">Повторите пароль, пожалуйста, это обезопасит вас с нами на случай ошибки.</span>
+            </div>
+            <hr class="form__divider"> 
+            <div class="input form__input-margin">
+                <label class="input__label" for="email">Электронная почта</label>
+                <div class="input__field-wrapper"><input class="input__field" type="email" id="email" name="email"></div>
+                <span class="input__text">Можно изменить адрес, указанный при регистрации.</span>
+            </div>
+            <div class="input form__input-margin">
+                <label class="input__label" for="agree">Я согласен</label>
+                <div class="input__field-wrapper">
+                    <input class="input__checkbox input__field-custom-checkbox" type="checkbox" id="agree" name="agree">
+                    <label class="input__checkbox-value" for="agree">принимать актуальную информацию на емейл</label>
+                </div>
+            </div>
+            <div class="input input_nowrap form__input-margin">
+                    <input class="input__submit" type="submit" value="Изменить" name="submit">
+                    <span class="input__text input__text_nowrap">последние изменения 15 мая 2012 в 14:55:17</span>
+                </div>
+            </div>
+        </form>
+
     </div>
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>

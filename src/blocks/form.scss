@@ -1,0 +1,14 @@
+$divider: #E5E4E4;
+
+.form {
+    width: 100%;
+    &__divider {
+        color: $divider;
+        max-width: 990px;
+        margin: 32px auto;
+        border-bottom: 0;
+    }
+    &__input-margin {
+        margin-bottom: 40px;
+    }
+}

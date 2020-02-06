@@ -1,1 +1,9 @@
-@import "./blocks/block.scss";
+@import "./blocks/main-container.scss";
+@import "./blocks/header.scss";
+@import "./blocks/status.scss";
+@import "./blocks/input.scss";
+@import "./blocks/form.scss";
+
+body {
+    min-width: 320px;
+}

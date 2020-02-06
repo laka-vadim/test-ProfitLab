@@ -1,0 +1,163 @@
+$secondary-txt: #999999;
+$border: #999999;
+$err-txt: #FF0000;
+$submit-bg: #71C838;
+$submit-txt: #ffffff;
+$submit-shadow: #539D22; 
+
+.input {
+    display: flex;
+    align-items: center;
+    margin: 0 100px;
+    &:not(.input_nowrap) {
+        @media (max-width: 1024px) {
+            flex-wrap: wrap;
+        }
+    }
+    @media (max-width: 620px) {
+        margin: 0;
+    }
+    @media (max-width: 420px) {
+        margin: 0 auto;
+    }
+    
+    &__label {
+        min-width: 224px;
+        width: 224px;
+        font-size: 21px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    &__field {
+        width: 335px;
+        height: 31px;
+        font-size: 16px;
+        padding-left: 12px;
+        box-sizing: border-box;
+        overflow: visible;
+        border-width: 1px;
+        border-color: $border;
+        border-style: solid;
+        @media (max-width: 1024px) {
+            width: 300px;
+        }
+        @media (max-width: 761px) {
+            width: 360px;
+        }
+        @media (max-width: 420px) {
+            width: 100%;
+        }
+        &_error {
+            border-color: $err-txt;
+        }
+        &-custom-select {
+            appearance: none;
+        }
+        &-custom-checkbox {
+            display: none;
+            &+ .input__checkbox-value{
+                position: relative;
+                margin-left: 0;
+                padding-left: 22px;
+                box-sizing: border-box;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: 0px;
+                    top: 3px;
+                    width: 12px;
+                    height: 12px;
+                    line-height: 7px;
+                    padding-left: 1px;
+                    border: 1px solid $border;
+                    box-sizing: border-box;
+                }
+            }
+            &:checked + .input__checkbox-value:before {
+                content: url(./images/vector.png);
+            }
+        }
+        &-wrapper {
+            margin-right: 18px;
+            position: relative;
+            @media (max-width: 420px) {
+                width: 100%;
+                margin-right: 0;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: -24px;
+                max-width: 335px;
+                color: $err-txt;
+                font-size: 12px;
+                line-height: 20px;
+            }
+            &_error{
+                &-empty:before {
+                    content: "Укажите пароль";
+                }
+                &-empty-mail:before {
+                    content: "Укажите E-mail";
+                }
+                &-short:before {
+                    content: "Используйте не менее 5 символов";
+                }
+                &-equal:before {
+                    content: "Пароли не совпадают";
+                }
+                &-is-mail:before {
+                    content: "Неверный E-mail";
+                }
+            }
+            &-custom-select:after {
+                /*кастомные элементы управления обертка*/
+                content: url(./images/arrow.png);
+                position: absolute;
+                right: 10px;
+                top: 6px;
+                pointer-events: none;
+            }
+        }
+    }
+    &__checkbox {
+        width: 12px;
+        height: 12px;
+        &-value {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+    }
+    &__submit {
+        width: 119px;
+        height: 40px;
+        font-size: 18px;
+        color: $submit-txt;
+        background-color: $submit-bg;
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+        border: 0;
+        box-shadow: 0px 1px 0px $submit-shadow;
+        margin-left: 224px;
+        margin-right: 12px;
+        cursor: pointer;
+        @media (max-width: 761px) {
+            margin-left: 0;
+        }
+    }
+    &__text {
+        font-size: 12px;
+        max-width: 340px;
+        color: $secondary-txt;
+        &:not(.input__text_nowrap) {
+            @media (max-width: 1024px) {
+                margin-left: 224px;
+                margin-top: 24px;
+            }
+            @media (max-width: 761px) {
+                margin-left: 0;
+                margin-top: 24px;
+            }
+        }
+    }
+    
+}

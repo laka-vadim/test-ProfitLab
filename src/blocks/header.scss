@@ -1,0 +1,21 @@
+$title-txt: #666666;
+$status-txt: #000000;
+
+.header {
+    margin: 90px 0 32px 100px;
+    @media (max-width: 620px) {
+        margin-left: 0;
+    }
+    &__title {
+        color: $title-txt;
+        font-size: 30px;
+        display: flex;
+        @media (max-width: 761px) {
+            flex-wrap: wrap;
+        }
+    }
+    &__title-status {
+        color: $status-txt;
+        font-size: inherit;
+    }
+}
