@@ -1,3 +1,5 @@
+import {API} from "./API";
+const api = new API("http://localhost:8000/api");
 
 export class Form {
     constructor(domNode) {
@@ -101,9 +103,18 @@ export class Form {
     sendForm = (event) => {
         event.preventDefault();
         if (this.validation()) {
-            console.log("sendForm() ok");
+            // const data = {
+            //     title: document.getElementById("status-text").innerText || "no_title",
+            //     city: this.city.value,
+            //     email: this.email.value
+            // }
+            const data = {
+                title: document.getElementById("status-text").innerText || "no_title",
+                city: "",
+                email: this.email.value
+            }
+            api.sendForm(data);
         } else console.log("sendForm() bad");
-        
         
     }
     
