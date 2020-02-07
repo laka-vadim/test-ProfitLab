@@ -5,7 +5,7 @@ export class API {
     }
 
     sendForm(data) {
-        fetch(this.host, {
+        return fetch(this.host, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -19,8 +19,5 @@ export class API {
                 
             }
         })
-        .then((res) => {
-            alert(`TITLE: ${res.title}, CITY: ${res.city}, EMAIL: ${res.email}`)})
-        .catch(err => alert(err.message));
     }
 }

@@ -93,6 +93,13 @@ export class Form {
         
     }
 
+    renderDate(date) {
+        const stringElem = document.getElementById("update-date");
+        const months = ["января", "февраля", "марта", "апреля", "мая", "июня",
+            "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+        stringElem.innerText = `последние изменения ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()} в ${date.toLocaleTimeString()}`;
+    }
+
     addListeners(form) {
         form.addEventListener("submit", this.sendForm);
         pass.addEventListener("blur", this.validationPass);
@@ -103,19 +110,19 @@ export class Form {
     sendForm = (event) => {
         event.preventDefault();
         if (this.validation()) {
-            // const data = {
-            //     title: document.getElementById("status-text").innerText || "no_title",
-            //     city: this.city.value,
-            //     email: this.email.value
-            // }
             const data = {
                 title: document.getElementById("status-text").innerText || "no_title",
-                city: "",
+                city: this.city.value,
                 email: this.email.value
-            }
-            api.sendForm(data);
-        } else console.log("sendForm() bad");
-        
+            };
+            api.sendForm(data)
+            .then((res) => {
+                const date = new Date(Date.now());
+                alert(`TITLE: ${res.title}, CITY: ${res.city}, EMAIL: ${res.email}`);
+                return date;
+            })
+            .then((date) => this.renderDate(date))
+            .catch(err => alert(err.message));
+        }   
     }
-    
 }
