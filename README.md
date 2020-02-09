@@ -5,7 +5,7 @@
 
 Чтобы развернуть проект локально необходимо иметь установленные [Git](https://git-scm.com/) и [Node.js с NPM](https://nodejs.org/en/)
 
-Backend находится в [этом репозитории](https://git-scm.com/)
+Backend находится в [этом репозитории](https://github.com/laka-vadim/test-back-ProfitLab)
 
 В консоле Git Bush выполните следующие команды:
 ```
