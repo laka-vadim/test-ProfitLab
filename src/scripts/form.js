@@ -113,7 +113,8 @@ export class Form {
             const data = {
                 title: document.getElementById("status-text").innerText || "no_title",
                 city: this.city.value,
-                email: this.email.value
+                email: this.email.value,
+                pass: this.pass.value
             };
             api.sendForm(data)
             .then((res) => {
